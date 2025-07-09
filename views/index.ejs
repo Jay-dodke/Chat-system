@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI WhatsApp</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <h3 id="allchats">Chats</h3>
+
+      <form method="GET" action="/chats/new">
+        <button type="submit" class="create-btn">
+          <i class="fas fa-plus"></i> New Chat
+        </button>
+      </form>
+
+      <% for(let chat of chats) { %>
+      <div class="date-separator">
+        <%= chat.created_at.toString().split(" ").slice(0,4).join(" ") %>
+      </div>
+
+      <div class="chat">
+        <div class="chat-header">From: <i><%= chat.from %></i></div>
+
+        <div class="msg">
+          <p><%= chat.msg %></p>
+          <div class="msg-actions">
+            <form method="GET" action="/chats/<%= chat._id %>/edit">
+              <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+            </form>
+
+            <form method="post" action="/chats/<%= chat._id %>?_method=DELETE">
+              <button class="delete-btn">
+                <i class="fas fa-trash"></i> Delete
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="chat-footer">
+          <span>Received by <i><%= chat.to %></i></span>
+          <span class="timestamp">
+            <%= chat.created_at.toString().split(" ")[4] %>
+          </span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
