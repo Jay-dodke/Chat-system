@@ -1,1 +1,3 @@
-# A lightweight, full-stack chat system built with Node.js, Express, EJS, and MongoDB, featuring clean UI, RESTful routing, and full CRUD operations.
+# Chat System
+
+A lightweight, full-stack chat system built with Node.js, Express, EJS, and MongoDB. Includes CRUD operations, clean UI, and responsive design.
