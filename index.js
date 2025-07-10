@@ -12,7 +12,7 @@ const Chat = require("./models/chat");
 const path = require("path");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs"); // ejs set ki h ab css set kerge
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); // connect css 
 app.use(express.urlencoded({extended: true})); // parse data
 app.use(methodOverride("_method"));
 //public folder ke andar se files dikhane ki permission deti hai.
