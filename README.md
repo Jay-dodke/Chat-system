@@ -1,4 +1,4 @@
-# 💬 Chat-System 🚀
+# 💬 Chat-System 
 
 **Chat-System** is a lightweight, full-stack real-time chat application built using **Node.js**, **Express**, **EJS**, and **MongoDB**.  
 It features a clean, responsive UI, full CRUD operations, RESTful architecture, and modular code structure.
